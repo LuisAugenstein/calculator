@@ -17,4 +17,28 @@
 		npm start
 	\end{verbatim}
 	
+	\paragraph{URL and fetch} 
+	\begin{verbatim}
+		const url = new URL("add/3/6", "https://127.0.0.1:8080")
+		fetch(url)
+			.then(res => res.json())
+			.then(jsonResponse => console.log(jsonResponse)) 
+	\end{verbatim}
+	
+	\section{Backend Setup}
+	\begin{verbatim}
+		sudo apt install librestbed-dev
+		sudo apt install cmake
+		mkdir calculator_back-end
+	\end{verbatim}
+	download the json.hpp file from https://github.com/nlohmann/json/releases
+	\begin{verbatim}
+		cp ~/Downloads/json.hpp ./calculator_back-end/include/
+	\end{verbatim}
+	build the project and create a CMakeLists.txt file
+	\begin{verbatim}
+		cmake -Hcalculator_back-end/ -Bcalculator_back-end/build
+		cmake --build calculator_back-end/build/ --target all --config Release
+		calculator_back-end/build/CalculatorAPI 
+	\end{verbatim}
 \end{document}

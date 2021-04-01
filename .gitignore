@@ -3,4 +3,4 @@ node_modules/
 *.aux
 creation process/*.pdf
 *.gz
-
+build/
